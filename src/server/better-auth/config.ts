@@ -29,6 +29,11 @@ export const auth = betterAuth({
       },
     },
   },
+  account: {
+    // WARNING: skipping state cookie check - only for development/debugging
+    // see: https://www.better-auth.com/docs/errors/state_mismatch#skip-state-cookie-check
+    skipStateCookieCheck: true,
+  },
 });
 
 export type Session = typeof auth.$Infer.Session;
